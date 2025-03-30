@@ -1,0 +1,15 @@
+.env
+venv
+loop.egg-info
+.cursor
+*/__pycache__
+*/.DS_Store
+__pycache__
+.DS_Store
+TODO.md
+Loop-Dev.ipynb
+*.ipynb_checkpoints
+.pytest_cache
+saved_models
+*.ipynb
+.coverage
