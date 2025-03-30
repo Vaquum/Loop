@@ -1,0 +1,28 @@
+- [ ] !!! Check carefully to ensure that previous data is used for predicting future
+- [ ] !!! Create a taxonomy to be used for data validation with regard to nans in indicators
+- [ ] Make sure that sequence_length never escapes the data/model
+- [ ] Add timestamps to Data
+- [ ] Add exclude columns to Data
+- [ ] Total daily movement (need higher resolution data)
+
+- [x] Make `Data Split Statistics` use the same styling as BACKTESTING REPORT does, but no need for footer
+- [x] Make the other print outs from `backtest.run_backtest()` also follow the styling as in BACKTESTING REPORT
+- [x] Move experiment.py, features.py, data.py, and backtest.py, /iutils and /models into /loop/loop and add __init__ files to make it an actual python library
+- [x] Go through all tests and ensure that we don't have dangling unused test files, remove if necessary
+- [x] Make sure that all current test files are used and move all tests to /tests
+- [x] Ensure that experiment.py have 100% coverage
+- [x] Stop keras-tuner from saving any artifacts, since we are saving our own. Also, have a look, we now have models and saved_models, only keep the one we actually need
+
+- [] Add class `Experiment()` to `experiment.py` which is same as running `python experiment.py` when called
+- [] Add tiome
+- [] Ensure that `Experiment()` saves the best model to `/saved_models`
+- [] TBA> Add datetime in same format as in...
+- [] Ensure that features.py have 100% coverage
+- [] Ensure that data.py have 100% coverage
+- [] Ensure that backtest.py have 100% coverage
+- [] Update test_features.py to match the current Features implementation
+- [] Ensure that `Predict()` looks for data from `/saved_models` only and nowhere else, unless user input `path_to_file` input argument
+- [] Add datetime column in `Data()` to be used whenever any sub-module need datetime column
+- [] Add book.py to manage the book
+- [] Make sure human readable parameters are passed from `Predict()` to `Backtest()`
+- [] Implement hourly data into the backtester for testing each day hour-by-hour
