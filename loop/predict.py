@@ -18,8 +18,7 @@ class Predict:
         
         return class_indices.numpy()
     
-    def load_model(sef):
-
+    def load_model(self):
         return
     
     def save_model(self):
