@@ -15,6 +15,7 @@ class Account:
         self.update_id()
         
     def _init_account(self, credit_usdt):
+        
         '''Initializes the account with the starting balance.
         
         credit_usdt | int | starting usdt balance
@@ -42,6 +43,7 @@ class Account:
                       action,
                       amount,
                       price_usdt):
+        
         '''Updates the account information based on the action taken.
         
         action | str | 'buy', 'sell', 'short', 'cover', or 'hold'
@@ -151,6 +153,7 @@ class Account:
         self.account['total_borrowed_btc'].append(round(total_borrowed_btc, 4))
         
     def update_id(self):
+        
         '''Will increment id by one. This has to be run always before
         updating account or book.'''
         
