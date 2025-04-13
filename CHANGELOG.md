@@ -1,21 +1,7 @@
 # Changelog
 
-## 14:30 on 26-08-2023
-- Added tests for loop/backtest.py, achieving 100% code coverage
-- Created test_backtest.py to test Backtest class functionality with different trading signals
+## 15:50 UTC on 14-04-2025
 
-## 16:45 on 25-08-2023
-- Added tests for loop/experiment.py, achieving 93% code coverage (remaining 7% is due to recursive methods)
-- Created test_experiment.py to test Experiment class functionality
-
-## 20:30 on 24-08-2023
-- Added tests for loop/features.py, achieving 100% code coverage
-- Created test_features.py to test Feature class functionality including feature engineering and scaling
-
-## 22:15 on 23-08-2023
-- Added tests for loop/data.py, achieving 100% code coverage
-- Created tests directory with test_data.py 
-
-## 18:45 on 13-04-2025
-- Added comprehensive test suite for account.py with 100% code coverage
-- Tests cover all methods and edge cases for Account class 
+- Major refactor of `Account`
+- New report: `reports.compare_prediction_with_actual`
+- Tests for main classes
