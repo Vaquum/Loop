@@ -15,3 +15,7 @@
 ## 22:15 on 23-08-2023
 - Added tests for loop/data.py, achieving 100% code coverage
 - Created tests directory with test_data.py 
+
+## 18:45 on 13-04-2025
+- Added comprehensive test suite for account.py with 100% code coverage
+- Tests cover all methods and edge cases for Account class 

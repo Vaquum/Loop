@@ -9,7 +9,7 @@ class Account:
         
         start_usdt | int | starting usdt balance
         '''
-        self.id = 0
+        self.position_id = 0
         
         self.account = self._init_account(credit_usdt=start_usdt)
         
@@ -19,7 +19,7 @@ class Account:
         
         credit_usdt | int | starting usdt balance
         '''
-        account = {'id': [self.id],
+        account = {'position_id': [self.position_id],
                    'action': ['hold'],
                    'timestamp': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
                    'credit_usdt': [credit_usdt],
@@ -92,16 +92,15 @@ class Account:
             
         elif action == 'cover':
 
-            if (amount / self.account['buy_price_usdt'][-1]) != self.account['amount_borrowed_btc'][-1]:
+            if (amount / price_usdt) != self.account['amount_borrowed_btc'][-1]:
                 raise ValueError("ERROR: To cover, amount / price_usdt has to equal amount_borrowed_btc")
 
             amount_covered_btc = (amount / price_usdt)
-            credit_usdt = self.account['debit_usdt'][-1] + (price_usdt - self.account['buy_price_usdt'][-1])
-            sell_price_usdt = self.account['buy_price_usdt'][-1]
-            self.account['buy_price_usdt'][-1] = price_usdt
-            
+            credit_usdt = self.account['buy_price_usdt'][-1] + (self.account['buy_price_usdt'][-1] - price_usdt)
+            sell_price_usdt = price_usdt
+
         # Update the account
-        self.account['id'].append(self.id)
+        self.account['position_id'].append(self.position_id)
         self.account['action'].append(action)
         self.account['timestamp'].append(timestamp)
         self.account['credit_usdt'].append(credit_usdt)
@@ -125,4 +124,4 @@ class Account:
         '''Will increment id by one. This has to be run always before
         updating account or book.'''
         
-        self.id += 1
+        self.position_id += 1
